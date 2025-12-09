@@ -1,7 +1,10 @@
 from fastapi import FastAPI
+from app.api.routes import routes
 
 app = FastAPI()
 
 @app.get("/")
-def hello():
-    return {"message": "Hello World"}
+def home():
+    return {"message": "Hello, SignAI!"}
+
+app.include_router(routes)
